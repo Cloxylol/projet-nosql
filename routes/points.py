@@ -118,3 +118,73 @@ def get_surrounding_routes(tx, node_id):
     """
     result = tx.run(query, node_id=node_id)
     return [record.data() for record in result]
+
+from flask import Blueprint, request, jsonify
+from config import driver
+
+points_bp = Blueprint('points', __name__)
+
+### ----------------- CREATE -----------------
+@points_bp.route('/points', methods=['POST'])
+def create_point():
+    data = request.get_json()
+    if not data or 'id' not in data or 'lat' not in data or 'lon' not in data:
+        return jsonify({"error": "Champs requis : id, lat, lon"}), 400
+
+    query = """
+    CREATE (p:Point {id: $id, lat: $lat, lon: $lon})
+    RETURN p
+    """
+    with driver.session() as session:
+        try:
+            session.run(query, id=data['id'], lat=data['lat'], lon=data['lon'])
+            return jsonify({"message": "Point créé avec succès"}), 201
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+### ----------------- READ -----------------
+@points_bp.route('/points/<int:point_id>', methods=['GET'])
+def get_point(point_id):
+    query = "MATCH (p:Point {id: $id}) RETURN p.id AS id, p.lat AS lat, p.lon AS lon"
+    with driver.session() as session:
+        record = session.run(query, id=point_id).single()
+        if record:
+            return jsonify(record.data())
+        else:
+            return jsonify({"error": "Point non trouvé"}), 404
+
+### ----------------- UPDATE -----------------
+@points_bp.route('/points/<int:point_id>', methods=['PUT'])
+def update_point(point_id):
+    data = request.get_json()
+    updates = []
+    if 'lat' in data:
+        updates.append("p.lat = $lat")
+    if 'lon' in data:
+        updates.append("p.lon = $lon")
+
+    if not updates:
+        return jsonify({"error": "Aucune donnée à mettre à jour"}), 400
+
+    query = f"""
+    MATCH (p:Point {{id: $id}})
+    SET {', '.join(updates)}
+    RETURN p
+    """
+    with driver.session() as session:
+        result = session.run(query, id=point_id, lat=data.get('lat'), lon=data.get('lon')).single()
+        if result:
+            return jsonify({"message": "Point mis à jour"}), 200
+        else:
+            return jsonify({"error": "Point non trouvé"}), 404
+
+### ----------------- DELETE -----------------
+@points_bp.route('/points/<int:point_id>', methods=['DELETE'])
+def delete_point(point_id):
+    query = "MATCH (p:Point {id: $id}) DETACH DELETE p"
+    with driver.session() as session:
+        try:
+            session.run(query, id=point_id)
+            return jsonify({"message": "Point supprimé"}), 200
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
