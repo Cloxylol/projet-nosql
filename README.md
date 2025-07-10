@@ -56,8 +56,7 @@ Lien vers notre présentation Canva :
 ](https://www.canva.com/design/DAGsq7pLHOA/ojB-tHvQe7nzvhUMSrpfCg/view?utm_content=DAGsq7pLHOA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h43d958840b)
 
 
-
-✅ Projet réalisé par :
+# Projet réalisé par :
 
 Florian DARDY
 
