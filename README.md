@@ -48,7 +48,8 @@ Accédez à la WebApp sur http://localhost:3000 ou le port indiqué dans le term
 
 Application accessible aussi ici : http://37.59.111.172/
 
-✅ Support de présentation
+## ✅ Support de présentation
+
 Lien vers notre présentation Canva :
 
 [👉 Présentation
@@ -59,6 +60,9 @@ Lien vers notre présentation Canva :
 ✅ Projet réalisé par :
 
 Florian DARDY
+
 Rémy LEGRAS
+
 Théo LEMAIRE
+
 Cloé PETETIN
