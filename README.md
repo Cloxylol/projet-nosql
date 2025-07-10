@@ -24,7 +24,7 @@ Lancez la WebApp en local :
     python app.py
 
 
-## ✅ Comment lancer la front (WebApp)
+## ✅ Comment lancer la WebApp
 
 Clonez le repo :
 
