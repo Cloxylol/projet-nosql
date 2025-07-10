@@ -4,7 +4,7 @@ Bienvenue sur le dépôt GitHub de notre projet SmartWay, réalisé dans le cadr
 
 ---
 
-## ✅ Comment lancer la back 
+## ✅ Comment lancer le back 
 Clonez le repo :
   
 
