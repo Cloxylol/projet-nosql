@@ -9,8 +9,7 @@ Clonez le repo :
   
 
      git clone https://github.com/Cloxylol/projet-nosql.git
-     cd [nom-du-repo]
-     
+     cd projet-nosql
 
 Installez les dépendances :
 
@@ -28,21 +27,16 @@ Lancez la WebApp en local :
 
 Clonez le repo :
 
-
-     git clone https://github.com/Cloxylol/projet-nosql.git
-     cd [nom-du-repo]
-   
+     git clone https://github.com/RemyLegras/SmartwayFront.git
+     cd SmartwayFront
 
 Installez les dépendances :
-
-      pip install -r requirements.txt
 
 
 Lancez la WebApp en local : 
 
-    python app.py
 
-Accédez à la WebApp sur http://localhost:8501 ou le port indiqué dans le terminal.
+Accédez à la WebApp sur http://localhost:3000 ou le port indiqué dans le terminal.
 
 
 
