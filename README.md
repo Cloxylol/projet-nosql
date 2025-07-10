@@ -25,7 +25,6 @@ Installez les dépendances :
 
 Lancez la WebApp en local : 
 
-
     python app.py
 
 
@@ -41,6 +40,7 @@ Lancez la WebApp en local :
 
     npm start 
     
+Acceder à l'application sur http://localhost:3000 
 
 Application accessible aussi ici : http://37.59.111.172/
 
