@@ -36,15 +36,11 @@ Clonez le repo :
      git clone https://github.com/RemyLegras/SmartwayFront.git
      cd SmartwayFront
 
-Installez les dépendances :
-
 
 Lancez la WebApp en local : 
 
-
-Accédez à la WebApp sur http://localhost:3000 ou le port indiqué dans le terminal.
-
-
+    npm start 
+    
 
 Application accessible aussi ici : http://37.59.111.172/
 
