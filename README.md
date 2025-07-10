@@ -4,6 +4,12 @@ Bienvenue sur le dépôt GitHub de notre projet SmartWay, réalisé dans le cadr
 
 ---
 
+## Lien du Colab 
+
+[Google Colab de préparation des données
+](https://colab.research.google.com/drive/18NcIzCh8w63NZDukNvgcQaIzJXOW-WEI?usp=sharing)
+
+
 ## ✅ Comment lancer le back 
 Clonez le repo :
   
